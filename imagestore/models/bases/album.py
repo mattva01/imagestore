@@ -7,7 +7,7 @@ __author__ = 'zeus'
 from django.db import models
 from django.db.models import permalink
 from sorl.thumbnail.helpers import ThumbnailError
-from tagging.fields import TagField
+from taggit.managers import TaggableManager
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from sorl.thumbnail import ImageField, get_thumbnail
