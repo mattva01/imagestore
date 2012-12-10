@@ -41,6 +41,7 @@ class BaseImage(models.Model):
     tags = TaggableManager(blank=True)
     order = models.IntegerField(_('Order'), default=0)
     image = ImageField(verbose_name = _('File'), upload_to=get_file_path)
+    alt_text = models.CharField(max_length=100, blank=True, null=True)
     user = models.ForeignKey(User, verbose_name=_('User'), null=True, blank=True, related_name='images')
     created = models.DateTimeField(_('Created'), auto_now_add=True, null=True)
     updated = models.DateTimeField(_('Updated'), auto_now=True, null=True)
