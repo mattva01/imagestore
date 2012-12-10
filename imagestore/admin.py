@@ -5,7 +5,7 @@ from django.conf import settings
 
 class InlineImageAdmin(AdminInlineImageMixin, admin.TabularInline):
     model = Image
-    fieldsets = ((None, {'fields': ['image', 'user', 'title', 'order', 'tags', 'album']}),)
+    fieldsets = ((None, {'fields': ['image', 'user', 'title', 'order', 'alt_text', 'tags', 'album']}),)
     raw_id_fields = ('user', )
     extra = 0
 
@@ -18,8 +18,8 @@ class AlbumAdmin(admin.ModelAdmin):
 admin.site.register(Album, AlbumAdmin)
 
 class ImageAdmin(admin.ModelAdmin):
-    fieldsets = ((None, {'fields': ['user', 'title', 'image', 'description', 'order', 'tags', 'album']}),)
-    list_display = ('admin_thumbnail', 'user', 'order', 'album', 'title')
+    fieldsets = ((None, {'fields': ['user', 'title', 'image', 'description', 'order', 'alt_text', 'tags', 'album']}),)
+    list_display = ('admin_thumbnail', 'user', 'order', 'alt_text', 'album', 'title')
     raw_id_fields = ('user', )
     list_filter = ('album', )
 
